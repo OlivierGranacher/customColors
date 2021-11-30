@@ -15,5 +15,18 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(customColors)
+#library(customColors)
+library(devtools)
+install_github("andreacirilloac/paletter")
+```
+
+# Get Colors from Picture Example
+
+> Source : [\<http://www.milanor.net/blog/build-color-palette-from-image-with-paletter/>](http://www.milanor.net/blog/build-color-palette-from-image-with-paletter/)
+
+```{r }
+library(paletter)
+colours_vector <- paletter::create_palette("elecSJ.jpg",
+                                           number_of_colors = 32,
+                                           type_of_variable = "categorical")
 ```
