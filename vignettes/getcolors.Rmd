@@ -16,17 +16,32 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 #library(customColors)
-library(devtools)
-install_github("andreacirilloac/paletter")
+# library(tidyverse)
+# library(devtools)
+# install_github("andreacirilloac/paletter")
+install.packages("shades")
 ```
 
 # Get Colors from Picture Example
 
 > Source : [\<http://www.milanor.net/blog/build-color-palette-from-image-with-paletter/>](http://www.milanor.net/blog/build-color-palette-from-image-with-paletter/)
 
-```{r }
+```{r getColors, eval = F}
 library(paletter)
-colours_vector <- paletter::create_palette("elecSJ.jpg",
-                                           number_of_colors = 32,
+colours_vector <- paletter::create_palette("elecSJ_1024px.jpg",
+                                           number_of_colors = 12,
                                            type_of_variable = "categorical")
+write_rds(colours_vector,"colorVector.rds")
+
+```
+
+```{r namesColorVector}
+colorVector <- readRDS("colorVector.rds")
+shades::swatch(colorVector)
+reorder <- c(1, 10, 4, 6, 2, 5, 3, 12, 7, 9, 8 , 11)
+shades::swatch(colorVector[reorder])
+colorVector <- colorVector[reorder]
+names(colorVector) <- c("brown", "brownRed", "greyDark", "greyBlue", "red", "greyMedium", "beige", "pinkDark", "greyLight", "greyRed", "purpleLight", "pinkLight" )
+colorVector
+
 ```
