@@ -15,11 +15,10 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-#library(customColors)
-# library(tidyverse)
+# library(customColors)
 # library(devtools)
-# install_github("andreacirilloac/paletter")
-install.packages("shades")
+if (require("paletter"))  {install_github("andreacirilloac/paletter")}
+if (require("shades"))  {install.packages("shades")}
 ```
 
 # Get Colors from Potline Picture
@@ -41,10 +40,11 @@ colours_vector <- paletter::create_palette("elecSJ_1024px.jpg",
 colorVector <- readRDS("colorVectorPotline.rds")
 # Vector after reordering and naming colours
 shades::swatch(colorVector)
-#reorder <- c(1, 10, 4, 6, 2, 5, 3, 12, 7, 9, 8 , 11)
-#shades::swatch(colorVector[reorder])
-#colorVector <- colorVector[reorder]
-#names(colorVector) <- c("brown", "brownRed", "greyDark", "greyBlue", "red", "greyMedium", "beige", "pinkDark", "greyLight", "greyRed", "purpleLight", "pinkLight" )
+reorder <- c(1, 10, 4, 6, 2, 5, 3, 12, 7, 9, 8 , 11)
+shades::swatch(colorVector[reorder])
+colorVector <- colorVector[reorder]
+names(colorVector) <- c("brown", "brownRed", "greyDark", "greyBlue", "red", "greyMedium", "beige", "pinkDark", "greyLight", "greyRed", "purpleLight", "pinkLight" )
 colorVector
+dput(colorVector)
 
 ```
