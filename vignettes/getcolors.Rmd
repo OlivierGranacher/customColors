@@ -1,8 +1,8 @@
 ---
-title: "Get Colors from sample"
+title: "Get Colors from Picture"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Get Colors from sample}
+  %\VignetteIndexEntry{Get Colors from Picture}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```{r setup}
 # library(customColors)
 # library(devtools)
-if (require("paletter"))  {install_github("andreacirilloac/paletter")}
+if (require("paletter"))  {devtools::install_github("andreacirilloac/paletter")}
 if (require("shades"))  {install.packages("shades")}
 ```
 
@@ -33,7 +33,7 @@ colours_vector <- paletter::create_palette("elecSJ_1024px.jpg",
                                            number_of_colors = 12,
                                            type_of_variable = "categorical")
 
-
+readr::write_rds("colorVectorPotline.rds")
 ```
 
 ```{r namesColorVector, eval=FALSE}
@@ -45,6 +45,5 @@ shades::swatch(colorVector[reorder])
 colorVector <- colorVector[reorder]
 names(colorVector) <- c("brown", "brownRed", "greyDark", "greyBlue", "red", "greyMedium", "beige", "pinkDark", "greyLight", "greyRed", "purpleLight", "pinkLight" )
 colorVector
-dput(colorVector)
 
 ```
