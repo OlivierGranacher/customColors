@@ -32,18 +32,16 @@ library(paletter)
 colours_vector <- paletter::create_palette("elecSJ_1024px.jpg",
                                            number_of_colors = 12,
                                            type_of_variable = "categorical")
-
-readr::write_rds("colorVectorPotline.rds")
 ```
 
 ```{r namesColorVector, eval=FALSE}
-colorVector <- readRDS("colorVectorPotline.rds")
 # Vector after reordering and naming colours
 shades::swatch(colorVector)
 reorder <- c(1, 10, 4, 6, 2, 5, 3, 12, 7, 9, 8 , 11)
 shades::swatch(colorVector[reorder])
-colorVector <- colorVector[reorder]
-names(colorVector) <- c("brown", "brownRed", "greyDark", "greyBlue", "red", "greyMedium", "beige", "pinkDark", "greyLight", "greyRed", "purpleLight", "pinkLight" )
-colorVector
-
+colorVector2 <- colorVector[reorder]
+names(colorVector2) <- c("brown", "brownRed", "greyDark", "greyBlue", "red", "greyMedium", "beige", "pinkDark", "greyLight", "greyRed", "purpleLight", "pinkLight" )
+names(colorVector2)
+shades::swatch(colorVector2)
+dput(colorVector2)
 ```
