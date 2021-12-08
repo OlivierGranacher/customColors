@@ -10,3 +10,16 @@
 #' }
 #'
 "colorVectorPotline"
+
+#' Potline Palettes
+#'
+#' A list of sets (palettes) of colors from colorVectorPotline
+#'
+#'
+#'
+#' @format A list containing names vectors with colors from colorVectorPotline
+#' \describe{
+#'   ...
+#' }
+#'
+"potlinePalettes"

@@ -1,4 +1,4 @@
-# Creating potline color vector data - See getcolors.Rmd Vignette
+## Creating potline color vector data - See getcolors.Rmd Vignette ----
 colorVectorPotline <- c(brown = "#752D2D", brownRed = "#793E44", greyDark = "#57625F",
                         greyBlue = "#525A6E", red = "#D40A03", greyMedium = "#79818B",
                         beige = "#968E7B", pinkDark = "#C09192", greyLight = "#A5ACBF",
@@ -10,3 +10,22 @@ usethis::use_data(colorVectorPotline,
 
 # Can also be accessed internally with customColors::colorVectorPotline
 # https://coolbutuseless.github.io/2018/12/10/r-packages-internal-and-external-data/
+
+
+## Creating Color Palettes from potline colors
+
+potlinePalettes <- list(
+  grey = customColors::extractColors("greyBlue",
+                                     "greyDark",
+                                     "greyMedium",
+                                     "greyLight"
+                                     ),
+  redGrey = customColors::extractColors("red",
+                                        "pinkLight",
+                                        "beige",
+                                        "greyMedium",
+                                        "greyDark"
+                                        )
+)
+usethis::use_data(potlinePalettes,
+                  overwrite = T)

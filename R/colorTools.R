@@ -2,8 +2,9 @@
 #'
 #' EXtract colors from custom color vector by color name
 #'
-#' @param colorVector named color vector
 #' @param ... names of colors to return - if NULL returns all colors
+#' @param colorVector named color vector
+#'
 #'
 #' @return named vector of selected colors
 #' @export
