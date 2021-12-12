@@ -15,7 +15,7 @@ usethis::use_data(colorVectorPotline,
 ## Creating Color Palettes from potline colors
 
 potlinePalettes <- list(
-  grey = customColors::extractColors("greyBlue",
+  grey = customColors::extractColors(
                                      "greyDark",
                                      "greyMedium",
                                      "greyLight"

@@ -4,7 +4,7 @@ Version: 0.1
 Authors@R: 
     person("Olivier", "Granacher", , "olivier.granacher@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Create Custom colors and tools to use them in ggplot.
 License: MIT + file LICENSE
 Suggests: 
     knitr,

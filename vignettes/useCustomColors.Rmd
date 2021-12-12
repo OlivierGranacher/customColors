@@ -16,4 +16,28 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(customColors)
+library(shades)
+```
+
+[Source](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2 "https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2")
+
+```{r showPotineColors}
+# Base potline colors from jpeg picture
+swatch(colorVectorPotline)
+names(colorVectorPotline)
+```
+
+```{r extractColors}
+swatch(extractColors("red", "greyRed", colorVector = colorVectorPotline))
+```
+
+```{r customPalettes}
+# Palettes (set of colors) from color vector
+potlinePalettes
+purrr::map(potlinePalettes, swatch)
+```
+
+```{r interpolatePalette}
+# Interpolate Palette to get more colors. Defaut palette is 'redGrey' from potlinePalette
+swatch(interpolatePalette(paletteName = "grey", reverse = T)(10))
 ```
