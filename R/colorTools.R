@@ -42,3 +42,32 @@ interpolatePalette <- function(paletteList = customColors::potlinePalettes,
     if (reverse) colr <- rev(colr)
     grDevices::colorRampPalette(colr, ...)
 }
+
+
+#' scale_color_potline
+#'
+#' Create scales for ggplot using potline colors
+#'
+#' @param palette name of palette in customColors::potlinePalettes
+#' @param discrete TRUE default for discrete scale
+#' @param reverse TRUE to reverse color order
+#' @param ... passed on to discrete_scale or scale_color_gradientn
+#'
+#' @return
+#' @export
+#'
+#' @examples
+scale_color_potline <- function(palette = "redGrey", discrete = T, reverse = F, ...) {
+  pal <- interpolatePalette(paletteName = palette, reverse = reverse)
+  if (discrete) {ggplot2::discrete_scale(aesthetics = "color",
+                                         scale_name = paste0("potline_", palette),
+                                         palette = pal,
+                                         ...
+  )
+  } else {
+      ggplot2::scale_color_gradientn(colours = pal(256), ...)
+    }
+}
+
+
+

@@ -19,4 +19,5 @@ VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)
 Imports: 
+    ggplot2,
     grDevices

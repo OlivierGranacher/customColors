@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(customColors)
 library(shades)
+library(ggplot2)
 ```
 
 [Source](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2 "https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2")
@@ -40,4 +41,10 @@ purrr::map(potlinePalettes, swatch)
 ```{r interpolatePalette}
 # Interpolate Palette to get more colors. Defaut palette is 'redGrey' from potlinePalette
 swatch(interpolatePalette(paletteName = "grey", reverse = T)(10))
+```
+
+```{r usePotlineColors}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+    geom_point(size = 4) +
+    scale_color_potline()
 ```
