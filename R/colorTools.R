@@ -24,7 +24,7 @@ extractColors <- function(..., colorVector = customColors::colorVectorPotline) {
 #'  Create a function to generate set of n colors from a color palette.
 #'
 #' @param paletteList list of named color vectors. Default to customColors::potlinePalettes
-#' @param paletteName name of palette in palette list.  Default to 'redGrey'
+#' @param paletteName name of palette in palette list.  Default to 'redBeigeGrey'
 #' @param reverse if TRUE reverse he colors
 #' @param ... passed on to colorRampPalette.
 #'
@@ -34,7 +34,7 @@ extractColors <- function(..., colorVector = customColors::colorVectorPotline) {
 #' @examples interpolatePalette()(10)
 #'
 interpolatePalette <- function(paletteList = customColors::potlinePalettes,
-                               paletteName = "redGrey",
+                               paletteName = "redBeigeGrey",
                                reverse = F,
                                ...) {
 
@@ -53,11 +53,10 @@ interpolatePalette <- function(paletteList = customColors::potlinePalettes,
 #' @param reverse TRUE to reverse color order
 #' @param ... passed on to discrete_scale or scale_color_gradientn
 #'
-#' @return
+#' @return scale
 #' @export
 #'
-#' @examples
-scale_color_potline <- function(palette = "redGrey", discrete = T, reverse = F, ...) {
+scale_color_potline <- function(palette = "redBeigeGrey", discrete = T, reverse = F, ...) {
   pal <- interpolatePalette(paletteName = palette, reverse = reverse)
   if (discrete) {ggplot2::discrete_scale(aesthetics = "color",
                                          scale_name = paste0("potline_", palette),
@@ -69,5 +68,28 @@ scale_color_potline <- function(palette = "redGrey", discrete = T, reverse = F, 
     }
 }
 
+#' scale_fill_potline
+#'
+#' Create scales for ggplot using potline colors
+#'
+#' @param palette name of palette in customColors::potlinePalettes
+#' @param discrete TRUE default for discrete scale
+#' @param reverse TRUE to reverse color order
+#' @param ... passed on to discrete_scale or scale_color_gradientn
+#'
+#' @return scale
+#' @export
+#'
+scale_fill_potline <- function(palette = "redBeigeGrey", discrete = T, reverse = F, ...) {
+  pal <- interpolatePalette(paletteName = palette, reverse = reverse)
+  if (discrete) {ggplot2::discrete_scale(aesthetics = "fill",
+                                         scale_name = paste0("potline_", palette),
+                                         palette = pal,
+                                         ...
+  )
+  } else {
+    ggplot2::scale_fill_gradientn(colours = pal(256), ...)
+  }
+}
 
 

@@ -20,12 +20,19 @@ potlinePalettes <- list(
                                      "greyMedium",
                                      "greyLight"
                                      ),
-  redGrey = customColors::extractColors("red",
+  redBeigeGrey = customColors::extractColors("red",
                                         "pinkLight",
                                         "beige",
                                         "greyMedium",
                                         "greyDark"
-                                        )
+                                        ),
+  pinkPurple = customColors::extractColors("pinkDark",
+                                           "pinkLight",
+                                           "purpleLight",
+                                           "greyRed"),
+  greyPinkLight = customColors::extractColors("greyLight",
+                                             "purpleLight",
+                                             "pinkLight")
 )
 usethis::use_data(potlinePalettes,
                   overwrite = T)

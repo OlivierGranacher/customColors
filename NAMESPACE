@@ -2,3 +2,5 @@
 
 export(extractColors)
 export(interpolatePalette)
+export(scale_color_potline)
+export(scale_fill_potline)

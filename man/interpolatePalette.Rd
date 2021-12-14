@@ -6,7 +6,7 @@
 \usage{
 interpolatePalette(
   paletteList = customColors::potlinePalettes,
-  paletteName = "redGrey",
+  paletteName = "redBeigeGrey",
   reverse = F,
   ...
 )
@@ -14,7 +14,7 @@ interpolatePalette(
 \arguments{
 \item{paletteList}{list of named color vectors. Default to customColors::potlinePalettes}
 
-\item{paletteName}{name of palette in palette list.  Default to 'redGrey'}
+\item{paletteName}{name of palette in palette list.  Default to 'redBeigeGrey'}
 
 \item{reverse}{if TRUE reverse he colors}
 

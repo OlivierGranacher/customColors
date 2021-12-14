@@ -6,5 +6,5 @@ testthat::test_that("colorVectorPotline contains at least 2 colors", {
 
 ## interpolatePalette function: tests that defaut palette exists
 testthat::test_that("Default palette for interpolation exists", {
-  testthat::expect_equal(names(potlinePalettes["redGrey"]), "redGrey")
+  testthat::expect_equal(names(potlinePalettes["redBeigeGrey"]), "redBeigeGrey")
 })
