@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, eval=FALSE}
 # library(customColors)
 # library(devtools)
 if (require("paletter"))  {devtools::install_github("andreacirilloac/paletter")}

@@ -23,6 +23,8 @@ library(ggplot2)
 
 [Source](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2 "https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2")
 
+# Potline Colors
+
 ```{r showPotineColors}
 # Base potline colors from jpeg picture
 swatch(colorVectorPotline)

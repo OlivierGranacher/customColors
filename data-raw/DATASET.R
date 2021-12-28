@@ -36,3 +36,17 @@ potlinePalettes <- list(
 )
 usethis::use_data(potlinePalettes,
                   overwrite = T)
+
+
+## Creating Trimet Colors ----
+##
+colorVectorTrimet <- c(white = "#EAF2F7", blue = "#1367AE")
+
+usethis::use_data(colorVectorTrimet, overwrite = T)
+
+## Creating Trimet Palette ----
+##
+trimetPalette <- list(
+  main = customColors::extractColors("white", "blue", colorVector = customColors::colorVectorTrimet)
+)
+usethis::use_data(trimetPalette, overwrite = T)
