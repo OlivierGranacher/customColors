@@ -1,6 +1,6 @@
 Package: customColors
 Title: Tools for Custom Colors 
-Version: 0.1
+Version: 0.2
 Authors@R: 
     person("Olivier", "Granacher", , "olivier.granacher@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))

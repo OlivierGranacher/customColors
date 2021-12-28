@@ -3,4 +3,6 @@
 export(extractColors)
 export(interpolatePalette)
 export(scale_color_potline)
+export(scale_color_trimet)
 export(scale_fill_potline)
+export(scale_fill_trimet)

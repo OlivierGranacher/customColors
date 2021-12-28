@@ -23,7 +23,7 @@ extractColors <- function(..., colorVector = customColors::colorVectorPotline) {
 #'
 #'  Create a function to generate set of n colors from a color palette.
 #'
-#' @param paletteList list of named color vectors. Default to customColors::potlinePalettes
+#' @param paletteList name of palette list. Default to customColors::potlinePalettes
 #' @param paletteName name of palette in palette list.  Default to 'redBeigeGrey'
 #' @param reverse if TRUE reverse he colors
 #' @param ... passed on to colorRampPalette.
@@ -92,4 +92,55 @@ scale_fill_potline <- function(palette = "redBeigeGrey", discrete = T, reverse =
   }
 }
 
+#' scale_color_trimet
+#'
+#' Create scales for ggplot using Trimet colors
+#'
+#' @param palette name of palette in customColors::trimetPalette
+#' @param discrete TRUE default for discrete scale
+#' @param reverse TRUE to reverse color order
+#' @param ... passed on to discrete_scale or scale_color_gradientn
+#'
+#' @return scale
+#' @export
+#'
+scale_color_trimet <- function(palette = "main", discrete = T, reverse = F, ...) {
+  pal <- interpolatePalette(paletteName = palette,
+                            reverse = reverse,
+                            paletteList = trimetPalette)
+  if (discrete) {ggplot2::discrete_scale(aesthetics = "color",
+                                         scale_name = paste0("potline_", palette),
+                                         palette = pal,
+                                         ...
+  )
+  } else {
+      ggplot2::scale_color_gradientn(colours = pal(256), ...)
+    }
+}
+
+#' scale_fill_trimet
+#'
+#' Create scales for ggplot using Trimet colors
+#'
+#' @param palette name of palette in customColors::trimetPalette
+#' @param discrete TRUE default for discrete scale
+#' @param reverse TRUE to reverse color order
+#' @param ... passed on to discrete_scale or scale_color_gradientn
+#'
+#' @return scale
+#' @export
+#'
+scale_fill_trimet <- function(palette = "main", discrete = T, reverse = F, ...) {
+  pal <- interpolatePalette(paletteName = palette,
+                            reverse = reverse,
+                            paletteList = trimetPalette)
+  if (discrete) {ggplot2::discrete_scale(aesthetics = "fill",
+                                         scale_name = paste0("potline_", palette),
+                                         palette = pal,
+                                         ...
+  )
+  } else {
+    ggplot2::scale_fill_gradientn(colours = pal(256), ...)
+  }
+}
 
