@@ -12,7 +12,7 @@ interpolatePalette(
 )
 }
 \arguments{
-\item{paletteList}{list of named color vectors. Default to customColors::potlinePalettes}
+\item{paletteList}{name of palette list. Default to customColors::potlinePalettes}
 
 \item{paletteName}{name of palette in palette list.  Default to 'redBeigeGrey'}
 

@@ -60,10 +60,40 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Sepal.Length)) +
   
 ```
 
-```{r scaleFill}
+```{r scaleFillPotline}
 ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
     geom_bar() +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
     scale_fill_potline(guide = "none") 
+
+```
+
+# Trimet Colors
+
+```{r showTrimetColors}
+swatch(colorVectorTrimet)
+names(colorVectorTrimet)
+trimetPalette
+purrr::map(trimetPalette, swatch)
+swatch(interpolatePalette(paletteName = "main",
+                          paletteList = trimetPalette,
+                          reverse = T)(10))
+```
+
+```{r useTrimetcolors}
+ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4 ) +
+  scale_color_trimet(discrete = F, reverse = T) +
+  theme(panel.background = element_rect(fill = "grey80"))
+  
+```
+
+```{r scaleFillTrimet}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+    geom_bar(color = "black") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+    scale_fill_trimet(guide = "none") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90)) 
 
 ```
