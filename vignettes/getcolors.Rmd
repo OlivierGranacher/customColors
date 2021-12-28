@@ -27,7 +27,7 @@ if (require("shades"))  {install.packages("shades")}
 
 ![](elecSJ_1024px.jpg)
 
-```{r getColors, eval = F}
+```{r getColorsPotLine, eval = F}
 library(paletter)
 colours_vector <- paletter::create_palette("elecSJ_1024px.jpg",
                                            number_of_colors = 12,
@@ -44,4 +44,18 @@ names(colorVector2) <- c("brown", "brownRed", "greyDark", "greyBlue", "red", "gr
 names(colorVector2)
 shades::swatch(colorVector2)
 dput(colorVector2)
+```
+
+# Trimet Colors
+
+# ![Trimet Logo](trimetLogo.jpg "Trimet Logo")
+
+```{r getColorsTrimet, eval=F}
+colorVectorTrimet <- paletter::create_palette("trimetLogo.jpg",
+                                           number_of_colors = 2,
+                                           type_of_variable = "categorical",
+                                           optimize_palette = F
+                                           )
+names(colorVectorTrimet) <- c("white", "blue")
+dput(colorVectorTrimet)
 ```
