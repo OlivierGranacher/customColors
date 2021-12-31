@@ -107,7 +107,7 @@ scale_fill_potline <- function(palette = "redBeigeGrey", discrete = T, reverse =
 scale_color_trimet <- function(palette = "main", discrete = T, reverse = F, ...) {
   pal <- interpolatePalette(paletteName = palette,
                             reverse = reverse,
-                            paletteList = trimetPalette)
+                            paletteList = customColors::trimetPalette)
   if (discrete) {ggplot2::discrete_scale(aesthetics = "color",
                                          scale_name = paste0("potline_", palette),
                                          palette = pal,
@@ -133,7 +133,7 @@ scale_color_trimet <- function(palette = "main", discrete = T, reverse = F, ...)
 scale_fill_trimet <- function(palette = "main", discrete = T, reverse = F, ...) {
   pal <- interpolatePalette(paletteName = palette,
                             reverse = reverse,
-                            paletteList = trimetPalette)
+                            paletteList = customColors::trimetPalette)
   if (discrete) {ggplot2::discrete_scale(aesthetics = "fill",
                                          scale_name = paste0("potline_", palette),
                                          palette = pal,
