@@ -144,3 +144,31 @@ scale_fill_trimet <- function(palette = "main", discrete = T, reverse = F, ...) 
   }
 }
 
+#' Colors for pot designs for G line
+#'
+#' @param line : potline default to G line
+#' @param alphaG : alpha for graphite blocks
+#'
+#' @return  named vector of color for pot designs
+#'
+colorCroquis <- function(line = "G", alphaG = .5) {
+  if (line == "G") {
+  return( c(
+    "AP32" = 'goldenrod3',
+    "AP32_GRAPH" = scales::alpha("goldenrod", alphaG),
+    "TR3X" = 'indianred3',
+    "TR33" = 'dodgerblue3',
+    "TR33_GRAPH" = scales::alpha('lightblue', alphaG)
+  ) )
+  } else {
+    return(
+      c("AP18" = "goldenrod3",
+        "AP19" = "goldenrod2",
+        "TR20" = "dodgerblue3"
+        )
+    )
+    }
+}
+
+
+

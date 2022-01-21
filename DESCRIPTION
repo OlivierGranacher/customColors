@@ -1,6 +1,6 @@
 Package: customColors
 Title: Tools for Custom Colors 
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: 
     person("Olivier", "Granacher", , "olivier.granacher@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
@@ -19,5 +19,6 @@ VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)
 Imports: 
+    scales,
     ggplot2,
     grDevices
