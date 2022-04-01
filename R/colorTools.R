@@ -171,4 +171,33 @@ colorCroquis <- function(line = "G", alphaG = .5) {
 }
 
 
+#' colorRangeOneColor
+#'
+#' Create a range of colors from one color with different levels of lightness
+#' 50 is the brightness of the base color
+#'
+#'
+#' @param nColor number of colors
+#' @param baseColor Base color
+#' @param begin lightness value for start color
+#' @param end   lightness value for end color
+#' @param rev   if TRUE reverse the colors
+#'
+#' @return vector of colors in hex format
+#' @export
+#'
+#' @examples
+#' shades::swatch(colorRangeOneColor(10))
+#'
+colorRangeOneColor <- function(nColor = 5, baseColor = extractColors("greyRed"), begin = 0, end = 100, rev = F) {
+   col <- shades::lightness(shades = baseColor,
+                      values = seq(begin, end, length.out = nColor)
+
+                        )
+  if (rev) return(rev(col)) else return(col)
+}
+
+
+
+
 

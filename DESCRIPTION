@@ -1,6 +1,6 @@
 Package: customColors
 Title: Tools for Custom Colors 
-Version: 0.2.2
+Version: 0.3.0
 Authors@R: 
     person("Olivier", "Granacher", , "olivier.granacher@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
@@ -21,4 +21,5 @@ Depends:
 Imports: 
     scales,
     ggplot2,
-    grDevices
+    grDevices,
+    shades
